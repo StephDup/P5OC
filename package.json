@@ -1,0 +1,22 @@
+{
+  "name": "oribear",
+  "version": "1.0.0",
+  "description": "5th project from oc course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StephDup/P5OC.git"
+  },
+  "author": "stephdup",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StephDup/P5OC/issues"
+  },
+  "homepage": "https://github.com/StephDup/P5OC#readme",
+  "dependencies": {
+    "bootstrap": "^4.5.3"
+  }
+}
