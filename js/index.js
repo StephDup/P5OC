@@ -15,7 +15,7 @@ function createCard(data) {
     title.innerHTML = data.name;
 
     let link = document.createElement("a");
-    let productUrl = "product.html?product=" + data._id;
+    let productUrl = "product.html?id=" + data._id;
     link.setAttribute("href", productUrl);
     link.classList.add("btn", "btn-primary", "stretched-link");
     link.innerHTML = "Commander";

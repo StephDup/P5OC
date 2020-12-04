@@ -21,7 +21,10 @@
                     <a class="nav-link" href="index.html">Accueil</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="lessons.html">Panier</a>
+                    <a href="checkout.html" id="checkout_button" class="btn btn-success">
+                      Panier <span id="checkout_number" class="badge badge-light"></span>
+                      <span class="sr-only">Nombre d'articles dans le panier</span>
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -30,12 +33,39 @@
         </div>
     </div>
     <div class="container">
-        <div class="jumbotron">
-            <h1>Bienvenue chez Oribear</h1>
-            <p>Retrouvez ci-dessous une sélection des plus beaux ours en peluche</p>
+      <div id="product-card" class="card mt-2 mb-3">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img id="card-img" class="card-img">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 id="card-title" class="card-title"></h5>
+              <p id="card-text" class="card-text"></p>
+            </div>
+            <div class="card-footer bg-transparent">
+              <p>Prix à l'unité : <span id="card-price">0</span></p>
+              <label>Coloris : 
+                <select id="product_color" class="custom-select" name="Coloris de l'ours">
+                </select>
+              </label>
+              <div id="quantity_div">Quantité : 
+                <button id="remove_one" type="button" class="btn btn-sm btn-info ml-4">-</button>
+                <span id="quantity" class="ml-2">1</span>
+                <button id="add_one" type="button" class="btn btn-sm btn-info ml-2">+</button>
+              </div>
+              <p class="mt-2">Montant Total : <span id="total_amount">0</span></p>
+              <button href="index.html" id="add_to_checkout" class="btn btn-info">Ajouter au panier</button>
+            </div>
+          </div>
         </div>
-        <div id="bearlist" class="row">
-        </div>
+      </div>
+      <div id="alert-card" class="alert alert-success d-none mt-3" role="alert">
+        <h4 class="alert-heading mt-3 mb-3">Article(s) ajouté(s) au panier !</h4>
+        <hr>
+        <a href="index.html" class="btn btn-primary ml-3">Continuer les achats</a>
+        <a href="checkout.html" class="btn btn-success ml-3">Afficher le panier</a>
+      </div>
     </div>
     <div class="bg-light mt-5">
         <div class="container">
@@ -52,6 +82,9 @@
             </div>
         </div>
     </div>
-    <script src="js/index.js"></script>
+    <script src="js/product.js"></script>
+    <script src="js/quantity.js"></script>
+    <script src="js/checkoutNav.js"></script>
+    <script src="js/addToCheckout.js"></script>
 </body>
 </html>

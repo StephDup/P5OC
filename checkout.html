@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css" />
-    <title>Oribear</title>
+    <title>Oribear - Panier</title>
 </head>
 <body>
     <div class="bg-dark">
@@ -33,11 +33,13 @@
         </div>
     </div>
     <div class="container">
-        <div class="jumbotron">
-            <h1>Bienvenue chez Oribear</h1>
-            <p>Retrouvez ci-dessous une sélection des plus beaux ours en peluche</p>
-        </div>
-        <div id="bearlist" class="row">
+        <ul id="list-checkout" class="list-unstyled">
+        </ul>
+        <a href="checkout.html" id="delete-all" class="btn btn-danger">Supprimer tout le panier</a>
+        <div id="alert-card" class="alert alert-danger d-none mt-3" role="alert">
+            <h4 class="alert-heading mt-3 mb-3">Votre panier est vide !</h4>
+            <hr>
+            <a href="index.html" class="btn btn-primary ml-3">Retourner aux achats</a>
         </div>
     </div>
     <div class="bg-light mt-5">
@@ -45,17 +47,18 @@
             <div class="row pt-4 pb-3">
             <div class="col">
                 <ul class="list-inline text-center">
-                <li class="list-inline-item"><a href="#">À propos</a></li>
-                <li class="list-inline-item">&middot;</li>
-                <li class="list-inline-item"><a href="#">Vie privée</a></li>
-                <li class="list-inline-item">&middot;</li>
-                <li class="list-inline-item"><a href="#">Conditions d'utilisations</a></li>
+                    <li class="list-inline-item"><a href="#">À propos</a></li>
+                    <li class="list-inline-item">&middot;</li>
+                    <li class="list-inline-item"><a href="#">Vie privée</a></li>
+                    <li class="list-inline-item">&middot;</li>
+                    <li class="list-inline-item"><a href="#">Conditions d'utilisations</a></li>
                 </ul>
             </div>
             </div>
         </div>
     </div>
-    <script src="js/index.js"></script>
+    <script src="js/checkout.js"></script>
     <script src="js/checkoutNav.js"></script>
+    <script src="js/checkoutButtons.js"></script>
 </body>
 </html>
