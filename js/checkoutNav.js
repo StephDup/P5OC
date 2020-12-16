@@ -1,15 +1,5 @@
-let buttonContent = document.getElementById("checkout_number");
+document.getElementById("checkout_number").innerHTML = localStorage.length;
 
-function getProductQuantity() {
-    let sum = 0;
-    for (let i = 0; i < localStorage.length; i++){
-        sum = sum + parseInt(localStorage.getItem(localStorage.key(i)));
-    }
-    return sum;
-}
-
-let numberOfItemsInCart = getProductQuantity();
-buttonContent.innerHTML = numberOfItemsInCart;
-if (numberOfItemsInCart == 0) {
+if (localStorage.length == 0) {
     document.getElementById("checkout_button").classList.replace("btn-success", "btn-danger");
 }

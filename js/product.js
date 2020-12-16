@@ -29,8 +29,20 @@ async function showProduct() {
         let search_params = new URLSearchParams(url.search); 
         if (search_params.has('id')) {
             let productID = search_params.get('id');
-            let product = bears.find(bear => bear._id === productID);
-            showProductFound(product);
+            if (!localStorage.getItem(productID)) {
+                let product = bears.find(bear => bear._id === productID);
+                showProductFound(product);
+                document.getElementById("add_to_checkout").addEventListener("click", function(event) {
+                    localStorage.setItem(productID, JSON.stringify(product));
+                    document.getElementById("alert-card").classList.remove("d-none");
+                    document.getElementById("product-card").classList.add("d-none");
+                    document.getElementById("buy-other").classList.add("d-none");
+                });
+            } else {
+                document.getElementById("already-ordered").classList.remove("d-none");
+                document.getElementById("buy-other").classList.add("d-none");
+                document.getElementById("product-card").classList.add("d-none");
+            }
         } else {
             showProductNotFound();
         }
@@ -38,4 +50,5 @@ async function showProduct() {
         console.log('Error', e);
     }
 }
+
 showProduct();

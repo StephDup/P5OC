@@ -23,7 +23,7 @@
                   <li class="nav-item">
                     <a href="checkout.html" id="checkout_button" class="btn btn-success">
                       Panier <span id="checkout_number" class="badge badge-light"></span>
-                      <span class="sr-only">Nombre d'articles dans le panier</span>
+                      <span class="sr-only">Nombre d'articles dans mon panier</span>
                     </a>
                   </li>
                 </ul>
@@ -33,14 +33,45 @@
         </div>
     </div>
     <div class="container">
-        <ul id="list-checkout" class="list-unstyled">
-        </ul>
-        <a href="checkout.html" id="delete-all" class="btn btn-danger">Supprimer tout le panier</a>
-        <div id="alert-card" class="alert alert-danger d-none mt-3" role="alert">
-            <h4 class="alert-heading mt-3 mb-3">Votre panier est vide !</h4>
-            <hr>
-            <a href="index.html" class="btn btn-primary ml-3">Retourner aux achats</a>
+      <div id="alert-card" class="alert alert-danger d-none mt-3" role="alert">
+        <h4 class="alert-heading mt-3 mb-3">Votre panier est vide !</h4>
+        <hr>
+        <a href="index.html" class="btn btn-primary ml-3">Continuer mes achats</a>
+    </div>
+      <ul id="list-checkout" class="list-unstyled">
+      </ul>
+    </div>
+    <div id="checkout-notempty"  class="container">
+        <div class="card mt-3">
+          <div class="card-body border border-info">
+            Prix total de votre commande : <span id="total-price"></span>
+          </div>
         </div>
+        <a href="checkout.html" id="delete-all" class="btn btn-danger mt-2">Supprimer tout mon panier</a>
+        <form id="form" class="mt-5">
+          <h5>Remplissez le formulaire suivant pour réserver votre commande :</h5>
+          <div class="form-group">
+            <label for="form-firstname">Prénom</label>
+            <input type="text" class="form-control" id="form-firstname" name="form-firstname" required></input>
+          </div>
+          <div class="form-group">
+            <label for="form-lastname">Nom</label>
+            <input type="text" class="form-control" id="form-lastname" name="form-lastname" required></input>
+          </div>
+          <div class="form-group">
+            <label for="form-adress">Adresse</label>
+            <input type="text" class="form-control" id="form-adress" name="form-adress" required></input>
+          </div>
+          <div class="form-group">
+            <label for="form-city">Ville</label>
+            <input type="text" class="form-control" id="form-city" name="form-city" required></input>
+          </div>
+          <div class="form-group">
+            <label for="form-email">Adresse Email</label>
+            <input type="email" class="form-control" id="form-email" name="form-email" placeholder="nom@exemple.com" required>
+          </div>
+          <button id="form-button" class="btn btn-primary">Commander</button>
+        </form>
     </div>
     <div class="bg-light mt-5">
         <div class="container">
@@ -59,6 +90,6 @@
     </div>
     <script src="js/checkout.js"></script>
     <script src="js/checkoutNav.js"></script>
-    <script src="js/checkoutButtons.js"></script>
+    <script src="js/form.js"></script>
 </body>
 </html>

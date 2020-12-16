@@ -1,9 +1,9 @@
 async function retrieveContent() {
-    const url = "http://localhost:3000/api/teddies";
-  
-    const response = await fetch(url);
-    return response.json();
-  }
+  const url = "http://localhost:3000/api/teddies";
+
+  const response = await fetch(url);
+  return response.json();
+}
 
 function createCard(data) {
     let text = document.createElement("p");
