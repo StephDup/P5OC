@@ -1,3 +1,5 @@
+//Displays the Cart Indicator in the navbar with item number
+
 document.getElementById("checkout_number").innerHTML = localStorage.length;
 
 if (localStorage.length == 0) {

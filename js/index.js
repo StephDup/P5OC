@@ -1,3 +1,4 @@
+//GET request
 async function retrieveContent() {
   const url = "http://localhost:3000/api/teddies";
 
@@ -5,6 +6,7 @@ async function retrieveContent() {
   return response.json();
 }
 
+//Creates a Bootstrap Card with all details from one teddybear
 function createCard(data) {
     let text = document.createElement("p");
     text.classList.add("card-text");
@@ -43,6 +45,7 @@ function createCard(data) {
     document.getElementById("bearlist").appendChild(col);
 }
 
+//Shows bears list or shows error if the server is down
 async function showContent() {
   try {
     const bears = await retrieveContent();
@@ -51,7 +54,11 @@ async function showContent() {
     });
   } catch (e) {
     console.log('Error', e);
+    let failedToConnectAlert = document.createElement("p");
+    failedToConnectAlert.innerHTML = "Erreur de connexion au serveur, veuillez réessayer. Erreur : " + e;
+    document.getElementById("bearlist").appendChild(failedToConnectAlert);
   }
 }
+
 
 showContent();

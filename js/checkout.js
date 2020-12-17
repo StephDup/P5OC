@@ -4,6 +4,7 @@ let deleteAllButton = document.getElementById("delete-all");
 let checkoutNotEmpty = document.getElementById("checkout-notempty");
 let totalPrice = 0;
 
+//Shows the list of all items in cart
 function showContent() {
     for (let i = 0; i < localStorage.length; i++) {
         let bear = JSON.parse(localStorage.getItem(localStorage.key(i)));
