@@ -1,3 +1,4 @@
+//POST request 
 async function postContent(data) {
     const url = "http://localhost:3000/api/teddies/order";
 
@@ -11,6 +12,7 @@ async function postContent(data) {
     return response.json();
 }
 
+//send the post request with jSON object and string array
 async function sendToServer() {
     try {
         let form = document.getElementById('form');
@@ -29,13 +31,12 @@ async function sendToServer() {
         const content = await postContent(order);
         localStorage.clear();
         localStorage.setItem("id", content.orderId);
-
     } catch (e) {
         console.log('Error', e);
     }
 }
 
-document.getElementById("form-button").addEventListener("click", async function (e) {
+document.getElementById("form").addEventListener("submit", async function (e) {
     e.preventDefault();
     await sendToServer();
     window.location = "ordered.html";

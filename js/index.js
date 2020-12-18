@@ -60,5 +60,4 @@ async function showContent() {
   }
 }
 
-
 showContent();
